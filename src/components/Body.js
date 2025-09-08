@@ -1,20 +1,16 @@
 import React from 'react'
 import SideBar from './SideBar'
-import VideoList from './VideoList'
-import ButtonList from './ButtonList'
+import MainContainer from './MainContainer'
 
 const Body = () => {
-  return (
-    <div>
-        <div>
-            <SideBar/>
+    return (
+        <div className="flex grid grid-cols-8">
+
+            < SideBar />
+            <MainContainer />
+
         </div>
-        <div>
-            <ButtonList/>
-            <VideoList/>
-        </div>
-    </div>
-  )
+    )
 }
 
 export default Body
