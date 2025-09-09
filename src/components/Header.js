@@ -1,10 +1,19 @@
 import React from 'react'
 import { INITIAL_LOGO, LOGO, MENU_LOGO } from '../utils/constants'
+import { useDispatch } from 'react-redux'
+import { toggleMenu } from '../store/appSlice';
 
 const Header = () => {
+
+    const dispatch = useDispatch();
+
+    const handleOnCLick = () => {
+        dispatch(toggleMenu())
+    }
+
     return (
         <div className=" flex justify-between p-4 m-4 drop-shadow-md">
-            <div className="flex">
+            <div className="flex" onClick={handleOnCLick}>
                 <img className="w-8 h-8 hover:cursor-pointer" alt="menu-logo" src={MENU_LOGO} />
                 <img className="w-24 pl-4 pb-2" alt="logo" src={LOGO}/>
             </div>

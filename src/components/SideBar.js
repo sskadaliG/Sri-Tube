@@ -7,7 +7,7 @@ const SideBar = () => {
   const [active, setActive] = useState("home");
 
   return (
-    <div className="col-span-1  ">
+    <div className="flex ">
       <div className="pl-2 ml-4 h-screen  overflow-y-scroll">
         <MenuList setActive={setActive} active={active} list={mainList}></MenuList>
         <MenuList setActive={setActive} active={active} title={"You >"} list={youList}></MenuList>
