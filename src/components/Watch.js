@@ -4,6 +4,7 @@ import { closeSideBar } from '../store/appSlice';
 import MainVideo from './MainVideo';
 import VideoList from './VideoList';
 import { useSearchParams } from 'react-router-dom';
+import CommentsContainer from './CommentsContainer';
 
 const Watch = () => {
 
@@ -18,12 +19,13 @@ const Watch = () => {
     }, []);
 
     return (
-        <div className="flex px-4">
+        <div className="flex px-4 pt-4">
             <div className=" pl-16">
                 <MainVideo params={params}/>
+                <CommentsContainer></CommentsContainer>
             </div>
             <div className="px-4">
-                <p className="font-bold px-2 "> Suggestions</p>
+                <p className="font-bold px-2 pb-2 "> Suggestions</p>
                 <VideoList params={searchParams}></VideoList>
             </div>
         </div>

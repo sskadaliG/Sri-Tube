@@ -1,5 +1,5 @@
 
-export const list = [
+const list = [
     "All",
     "Music",
     "Telugu cinema",
@@ -17,3 +17,13 @@ export const list = [
     "Asian music",
     "Tourism",
 ];
+
+const mainVideoList = [
+    "Like",
+    "Share",
+    "Download",
+    "Thanks",
+    "..."
+];
+
+export {list, mainVideoList};

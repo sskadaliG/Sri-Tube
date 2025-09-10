@@ -1,13 +1,12 @@
 import React from 'react'
 import Button from './Button'
-import { list } from '../utils/buttonConstants'
 
-const ButtonList = () => {
+const ButtonList = ({optionsList}) => {
 
   
   return (
     <div className="flex overflow-x-auto">
-      {list.map((buttonName, index) => <Button key={index} buttonName={buttonName}/>)}
+      {optionsList.map((buttonName, index) => <Button key={index} buttonName={buttonName}/>)}
     </div>
   )
 }

@@ -9,7 +9,10 @@ import Watch from './components/Watch';
 function App() {
 
   const appRouter = createBrowserRouter([
-    {
+    {path:"/",
+      element:<Header></Header>,
+      children:[
+        {
       path:"/",
       element:<Body/>,
       children:  [{
@@ -21,14 +24,17 @@ function App() {
       element:<Watch/>
     }]
     }
+      ]
+    }
+    
   ]
   )
 
   return (
     <Provider store={appStore}>
       <div >
-        <Header />
-        <RouterProvider router = {appRouter}></RouterProvider>      
+        <RouterProvider router = {appRouter}>
+         </RouterProvider>      
         </div>
     </Provider>
 
