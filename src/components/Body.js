@@ -7,14 +7,14 @@ const Body = () => {
     const menuOpen = useSelector((store) => store.app.isMenuOpen);
 
 
-        if(menuOpen === null) return;
+    if (menuOpen === null) return;
 
 
     return (
-        <div className=" flex">
+        <div className="flex">
 
             {menuOpen && < SideBar />}
-            <Outlet/>
+            <Outlet />
 
         </div>
     )

@@ -1,14 +1,14 @@
-import React from 'react'
-import  views  from '../utils/views';
 
-const VideoCard = ({info}) => {
+import views from '../utils/views';
 
-  const {snippet, statistics} = info;
+const VideoCard = ({ info }) => {
 
-  const {thumbnails, title, channelTitle} = snippet;
+  const { snippet, statistics } = info;
+
+  const { thumbnails, title, channelTitle } = snippet;
   return (
     <div className="p-2 w-80 hover:cursor-pointer">
-      <img className="rounded-lg my-2" alt="video-logo" src={thumbnails.medium.url}/>
+      <img className="rounded-lg my-2" alt="video-logo" src={thumbnails.medium.url} />
       <ul >
         <li className="font-bold text-md pt-2 pb-1">{title}</li>
         <li className="text-gray-600 text-sm font-medium">{channelTitle}</li>

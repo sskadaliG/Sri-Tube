@@ -19,11 +19,11 @@ const list = [
 ];
 
 const mainVideoList = [
-    "Like",
-    "Share",
-    "Download",
-    "Thanks",
+    "👍 Like",
+    "↗ Share",
+    "⬇ Download",
+    "🙏 Thanks",
     "..."
 ];
 
-export {list, mainVideoList};
+export { list, mainVideoList };

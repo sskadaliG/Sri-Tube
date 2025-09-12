@@ -7,8 +7,8 @@ const VideoList = () => {
   const videos = useVideos();
 
   return (
-    <div className="flex flex-wrap h-screen pt-2  overflow-y-scroll">
-      {videos.map((video) => <Link key={video.id} to={"/watch?v="+ video.id}><VideoCard info={video}></VideoCard></Link>)}
+    <div className="flex flex-wrap  pt-2 ">
+      {videos.map((video) => <Link key={video.id} to={"/watch?v=" + video.id}><VideoCard info={video}></VideoCard></Link>)}
     </div>
   )
 }

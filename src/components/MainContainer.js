@@ -7,8 +7,11 @@ import { list } from '../utils/buttonConstants'
 const MainContainer = () => {
   return (
     <div className="pl-4 pr-4 ml-4 mr-4">
-        <ButtonList optionsList={list}/>
-        <VideoList/>
+      <ButtonList optionsList={list} />
+      <div className="h-screen overflow-y-scroll">
+        <VideoList />
+      </div>
+
     </div>
   )
 }

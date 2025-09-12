@@ -4,7 +4,7 @@ import { commentsData } from '../utils/commentsData'
 const Comments = ({ data }) => {
   const { name, text, reply } = data;
   return (
-    <div className="flex w-full pl-2 py-2 bg-gray-100 rounded-lg">
+    <div className="flex w-full pl-2 py-2 bg-gray-50 rounded-lg">
       <img className="w-12 rounded-full mr-4" alt="logo" src={INITIAL_LOGO} />
       <div><h1 className="font-bold">{name}</h1>
         <p>{text}</p></div>
@@ -15,11 +15,11 @@ const Comments = ({ data }) => {
 
 const CommentList = ({ comments }) => {
   return comments?.map((c, index) => (
-    <div  key={index} className="py-2 pl-2">
-      <Comments  data={c} />
+    <div key={index} className="py-2 pl-2">
+      <Comments data={c} />
       <div className="border-l-2 border-gray-200 ml-5 pl-5">
 
-         <CommentList comments={c?.reply}></CommentList>
+        <CommentList comments={c?.reply}></CommentList>
       </div>
     </div>
 

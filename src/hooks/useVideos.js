@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { YOUTUBE_VIDEOS_API } from '../utils/constants';
 
 const useVideos = () => {
-
-const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState([]);
   useEffect(() => {
-    getVideos()
+    getVideos();
   }, []);
 
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEOS_API);
     const json = await data.json();
     setVideos(json?.items);
-  }
+  };
   return videos;
-}
+};
 
-export default useVideos
+export default useVideos;

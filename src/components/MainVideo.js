@@ -1,7 +1,6 @@
 import React from 'react'
 import useVideos from '../hooks/useVideos'
 import views from '../utils/views';
-import ButtonList from './ButtonList';
 import { mainVideoList } from '../utils/buttonConstants';
 
 const MainVideo = ({ params }) => {
@@ -15,9 +14,11 @@ const MainVideo = ({ params }) => {
   const { title, channelTitle } = snippet;
 
   return (
-    <div className="border-b   pb-4"><iframe className="rounded-lg"
-      width="1350"
-      height="720"
+    <div className="border-b   pb-4"><iframe className="rounded-lg md:w-[1000px]
+      md:h-[600px]
+      lg:w-[1350px]
+      lg:h-[720px]"
+
       src={`https://www.youtube.com/embed/a-${params}bT1Qnk1B8Oo?si=YFn0hcnKSEZ9ab1R?&autoplay=1&disablekb=1&loop=1&playlist=${params}`}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -27,20 +28,20 @@ const MainVideo = ({ params }) => {
         <li className="font-bold text-xl pt-4 pb-1">{title}</li>
         <div className="flex justify-between">
           <div className=" pl-4 flex space-x-6">
-          <div>
-            <li className="text-black text-md pt-2 font-bold">{channelTitle}</li>
-            <li className="text-gray-600 text-sm font-medium">{views(statistics.viewCount)} views</li>
+            <div>
+              <li className="text-black text-md pt-2 font-bold">{channelTitle}</li>
+              <li className="text-gray-600 text-sm font-medium">{views(statistics.viewCount)} views</li>
+            </div>
+            <button className="px-3  py-2 m-2 w-max h-min  font-bold text-sm rounded-full whitespace-nowrap hover:cursor-pointer hover:bg-opacity-80 bg-black text-white">Subscribe</button>
           </div>
-          <button className="px-3  py-2 m-2 w-max h-min  font-bold text-sm rounded-full whitespace-nowrap hover:cursor-pointer hover:bg-opacity-80 bg-black text-white">Subscribe</button>
+          <div>
+            {mainVideoList.map((b, index) => <button key={index} className="px-3  py-2 m-2 w-max h-min  font-bold text-sm rounded-full whitespace-nowrap hover:cursor-pointer hover:bg-gray-200 bg-gray-100 text-black">{b}</button>)}
+          </div>
         </div>
-        <div>
-          {mainVideoList.map((b,index) => <button key={index} className="px-3  py-2 m-2 w-max h-min  font-bold text-sm rounded-full whitespace-nowrap hover:cursor-pointer hover:bg-gray-200 bg-gray-100 text-black">{b}</button>)}
-        </div>
-        </div> 
       </ul>
-      
-       
-    </div>
+
+
+    </div >
   )
 }
 
